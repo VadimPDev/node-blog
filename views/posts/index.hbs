@@ -1,0 +1,27 @@
+<div class="justify-content-center">
+  <div id="posts">
+    <div class="col-md-12">
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Заголовок</th>
+      <th scope="col">Автор</th>
+      <th scope="col">Действие</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each postsData}}
+    <tr>
+      <th scope="row">{{_id}}</th>
+      <td>{{title}}</td>
+      <td>{{author}}</td>
+      <td><button class="btn js-remove" data-id="{{_id}}">Удалить</button><button class="btn"><i class="fa fa-edit"></i></button></td>
+    </tr>
+    {{/each}}
+    
+  </tbody>
+</table>
+</div>
+</div>
+</div>

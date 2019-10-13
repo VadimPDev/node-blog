@@ -1,0 +1,63 @@
+<br>
+<div class="container">
+      <br>
+        
+
+        <div class="alert alert-warning">
+            <h4>Добавить запись</h4>
+            
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-sm-8">
+                
+                <form role="form" method="POST" id="post" action="/posts/create">
+                    <div class="form-group float-label-control">
+                        <label for="title">Заголовок</label>
+                        <input type="text" name="title" id="title" class="form-control" >
+                    </div>
+                    <input type="hidden" name="_csrf" data-csrf="{{csrf}}" id="csrf" value="{{csrf}}">
+                    <div class="form-group float-label-control">
+                        <label for="short">Короткая запись</label>
+                        <textarea class="form-control" name="short" id="short" placeholder="Textarea" rows="2"></textarea>
+                    </div>
+                    <div class="form-group float-label-control">
+                        <label for="full">Полный текст</label>
+                        <textarea class="form-control" name="full" id="full" placeholder="Textarea" rows="4"></textarea>
+                    </div>
+                    <div class="form-group float-label-control">
+                        <label for="image">Изображение</label>
+                        <input type="file" name="image" class="form-control-file">
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary">Создать</button>
+                </form>
+
+
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            Features
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul>
+                            <li>Very customizable</li>
+                            <li>Works with Bootstrap's native form examples</li>
+                            <li>Uses CSS transitions for fallback browser support</li>
+                            <li>Placeholder override for labels when fields are empty</li>
+                            <li>Included authored jQuery plugin</li>
+                            <li>Optional bottom label positioning with the <code>.label-bottom</code> utility</li>
+                            <li>Works great with Chrome's AutoComplete</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <script src="/js/admin.js"></script>

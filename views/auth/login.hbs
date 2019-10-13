@@ -1,0 +1,32 @@
+<div class="row justify-content-center">
+    <form class="form-horizontal" action='/login' method="POST">
+    <fieldset>
+        <h1>Вход</h1>
+        <div class="control-group">
+        <!-- Username -->
+        <label class="control-label"  for="email">E-MAIL</label>
+        <div class="controls">
+            <input type="email" id="email" name="email" placeholder="" class="input-xlarge">
+   
+        </div>
+        </div>
+    <input type="hidden" name="_csrf" value="{{csrf}}">
+        <div class="control-group">
+        <!-- E-mail -->
+        <label class="control-label" for="password">Пароль</label>
+        <div class="controls">
+            <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+
+        </div>
+        </div>
+    <div class="control-group">
+        <!-- Button -->
+        <br>
+        <div class="controls">
+            <button class="btn btn-success">Войти</button>
+        </div>
+        </div>
+        
+    </fieldset>
+    </form>
+</div>
