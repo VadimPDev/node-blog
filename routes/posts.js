@@ -34,6 +34,19 @@ router.get('/:id',async(req,res)=>{
     })
 })
 
+router.get('/edit/:id',async(req,res)=>{
+
+    const id = req.params.id
+
+    const news = await posts.findById({_id:id})
+
+    res.render('posts/edit',{
+      title:'Редактировании статьи',
+      layout:'admin',
+      news
+    })
+})
+
 router.get('/',auth,async(req,res)=>{
   const postsData = await posts.find().sort({created_at:-1})
   res.render('posts/index',{
@@ -52,6 +65,13 @@ router.post('/create',auth,upload.single('image'),async(req,res)=>{
     await post.save()
     res.status(200).json(['success','Новость добавлена'])   
 
+})
+
+router.post('/edit/:id',upload.fields([]),async(req,res)=>{
+  const id = req.params.id
+  const {title,short,full} = req.body
+  const result = await posts.findByIdAndUpdate(id,{title,short,full})
+  res.status(200).json(['success','Запись изменена'])
 })
 
 router.delete('/remove/:id',auth,async(req,res)=>{
