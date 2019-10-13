@@ -1,1 +1,1 @@
-# node-blog
+Simple blog based on node js
